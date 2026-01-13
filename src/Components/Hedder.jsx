@@ -82,7 +82,7 @@ export default function Headder() {
 
             {/* Menu section */}
             <div className="flex items-center gap-6 font-medium">
-                <a className="button-bg-accent p-3 hidden md:flex items-center justify-center rounded-xl hover:bg-[#e0e0e08c]" href="">My Resume</a>
+                <a className="button-bg-accent p-3 hidden md:flex items-center justify-center rounded-xl hover:bg-[#e0e0e08c]">My Resume</a>
 
                 {/* Menu button */}
                 <button

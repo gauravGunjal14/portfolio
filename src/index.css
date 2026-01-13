@@ -5,7 +5,7 @@
   --text-primary: #1A1A1A;
   --text-secondary: #4B5563;
   --accent-olive: #3F4F44;
-  --button-bg-secondary: #F4F5F6;
+  --button-bg-secondary: #e2e2e2;
 }
 
 .bg-main {
@@ -28,6 +28,7 @@
 .button-bg-accent {
   background-color: var(--button-bg-secondary);
   color: #4B5563;
+    border: 1px solid rgb(126, 126, 126);
 }
 
 .text-accent {
@@ -40,11 +41,4 @@
   -webkit-backdrop-filter: blur(14px) saturate(120%);
   border: 1px solid rgba(255, 255, 255, 0.35);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.6);
-  /* background-image: */
-    /* radial-gradient(circle at 15% 80%,
-      rgba(52, 174, 103, 0.3),
-      transparent 70%),
-    radial-gradient(circle at 85% 20%,
-      rgba(48, 150, 201, 0.3),
-      transparent 70%) */
 }
