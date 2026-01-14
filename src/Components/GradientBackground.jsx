@@ -11,11 +11,11 @@ export default function GradientBackground() {
     let blobs = [];
 
     const COLORS = [
-      "rgba(110,139,122,0.4)",
-      "rgba(143,169,155,0.5)",
-      "rgba(170,200,215,0.4)",
-      "rgba(120,155,180,0.1)",
-      "rgba(240,240,235,0.3)",
+      "rgba(30, 186, 95, 0.1)",
+      "rgba(22, 73, 213, 0.1)",
+      "rgba(20, 135, 193, 0.1)",
+      "rgba(52, 30, 160, 0.1)",
+      "rgba(210, 16, 194, 0.1)",
     ];
 
     function resize() {
@@ -76,7 +76,7 @@ export default function GradientBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full"
+      className="absolute inset-0 w-full h-full opacity-[0.45] pointer-events-none"
     />
   );
 }
