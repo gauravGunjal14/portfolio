@@ -61,7 +61,7 @@ export default function Headder() {
 
             {/* profile section */}
             <Link to="/" className="flex items-center gap-4 ">
-                <img className="h-10 border-3 border-white rounded-md shadow-xl/5 " src="/gaurav.jpg" alt="Gaurav Gunjal" />
+                <img className="h-10 border-2 border-gray-500 rounded-md shadow-lg " src="/gaurav.png" alt="Gaurav Gunjal" />
                 <div className="flex flex-col">
                     <h1 className="text-primary text-md font-medium">Gaurav Gunjal</h1>
                     {/* online indicator */}
@@ -82,12 +82,12 @@ export default function Headder() {
 
             {/* Menu section */}
             <div className="flex items-center gap-6 font-medium">
-                <a className="button-bg-accent p-3 hidden md:flex items-center justify-center rounded-xl hover:bg-[#e0e0e08c]">My Resume</a>
+                <a className="button-secondary p-3 hidden md:flex items-center justify-center rounded-xl">My Resume</a>
 
                 {/* Menu button */}
                 <button
                     ref={buttonRef}
-                    className="bg-accent p-2 md:w-30 md:py-3 md:px-4 flex items-center justify-between rounded-xl"
+                    className="button-main p-2 md:w-30 md:py-3 md:px-4 flex items-center justify-between rounded-xl"
                     onClick={() => setMenuOpen(!menuOpen)}
                     aria-expanded={menuOpen}
                     aria-label="Toggle menu"

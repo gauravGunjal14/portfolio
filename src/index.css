@@ -4,7 +4,7 @@
   --bg-main: #FBFBF9;
   --text-primary: #1A1A1A;
   --text-secondary: #4B5563;
-  --accent-olive: #3F4F44;
+  --accent-black: #0a0a0a;
   --button-bg-secondary: #e2e2e2;
 }
 
@@ -21,18 +21,31 @@
 }
 
 .bg-accent {
-  background-color: var(--accent-olive);
+  background-color: var(--accent-black);
   color: #ffffff;
 }
 
-.button-bg-accent {
+.button-main {
+  background-color: var(--accent-black);
+  color: #ffffff;
+}
+
+.button-main:hover {
+  background-color: #1a1a1a;
+}
+
+.button-secondary {
   background-color: var(--button-bg-secondary);
   color: #4B5563;
-    border: 1px solid rgb(126, 126, 126);
+  border: 1px solid rgb(126, 126, 126);
+}
+
+.button-secondary:hover {
+  background-color: #d4d4d4;
 }
 
 .text-accent {
-  color: var(--accent-olive);
+  color: var(--accent-blacklive);
 }
 
 .glass-bg {
