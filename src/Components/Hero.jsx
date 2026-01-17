@@ -12,8 +12,6 @@ export default function Hero() {
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-
-            // ✅ Force correct initial state
             gsap.set(
                 [avatarRef.current, subTextRef.current, ctaRef.current],
                 { autoAlpha: 1 }
@@ -80,14 +78,14 @@ export default function Hero() {
                         I’m a Frontend Developer,
                     </p>
 
-                    <h1 className="text-4xl md:text-6xl font-semibold text-black leading-tight">
+                    <h1 className="text-4xl md:text-6xl font-semibold text-gray-800 leading-tight">
                         designing and building thoughtful web interfaces.
                     </h1>
                 </div>
 
                 <p
                     ref={subTextRef}
-                    className="mt-6 max-w-xl text-gray-700 text-lg">
+                    className="mt-6 max-w-xl text-gray-500 text-lg">
                     I focus on building clear, performant, and maintainable user interfaces
                     using modern frontend technologies.
                 </p>
@@ -95,13 +93,26 @@ export default function Hero() {
                 <div
                     ref={ctaRef}
                     className="mt-8 flex gap-4">
-                    <Link to="/projects" className="button-main w-36 px-6 py-3 rounded-xl">
+                    <a
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=gauravgunjal45@gmail.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="button-main flex items-center justify-center gap-2 w-40 px-6 py-3 rounded-2xl">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                            <path d="M4 6h16v12H4z" stroke="currentColor" strokeWidth="1.5" />
+                            <path d="M4 6l8 6 8-6" stroke="currentColor" strokeWidth="1.5" />
+                        </svg>
+                        Contact Me
+                    </a>
+
+                    <Link
+                        to="/projects"
+                        className="button-secondary flex items-center justify-center w-40 px-6 py-3 rounded-2xl"
+                    >
                         View Projects
                     </Link>
-                    <Link to="/contact" className="button-secondary w-36 px-6 py-3 rounded-xl">
-                        Contact
-                    </Link>
                 </div>
+
 
             </div>
         </section>

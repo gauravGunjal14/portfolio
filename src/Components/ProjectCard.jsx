@@ -1,8 +1,6 @@
-import { Link } from "react-router-dom";
-
 export default function ProjectCard({ project }) {
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm hover:shadow-lg transition-shadow duration-300">
+    <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm transition-shadow hover:shadow-md">
 
       <h3 className="text-xl font-semibold text-black">
         {project.title}
@@ -14,9 +12,9 @@ export default function ProjectCard({ project }) {
 
       {/* Tech stack */}
       <div className="flex flex-wrap gap-2 mt-4">
-        {project.tech.map((tech, i) => (
+        {project.tech.map((tech, index) => (
           <span
-            key={i}
+            key={index}
             className="text-xs px-3 py-1 rounded-full bg-gray-100 text-gray-700"
           >
             {tech}
@@ -41,6 +39,7 @@ export default function ProjectCard({ project }) {
           Code
         </a>
       </div>
+
     </div>
   );
 }

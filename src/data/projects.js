@@ -3,18 +3,20 @@ export const projects = [
     id: 1,
     title: "PassMint – Password Generator",
     description:
-      "A modern password generator built with React. Generates secure passwords with custom rules.",
-    tech: ["React", "CSS", "JavaScript"],
+      "A modern password generator built with React that creates secure passwords with customizable rules.",
+    tech: ["React", "JavaScript", "CSS"],
     live: "https://passmint14.netlify.app",
     github: "https://github.com/gauravGunjal14/passmint",
+    featured: true,
   },
   {
     id: 2,
     title: "Swiggy Clone",
     description:
-      "Frontend clone of Swiggy using live API data, routing, and reusable components.",
+      "A frontend clone of Swiggy built using React with real API data and routing.",
     tech: ["React", "API", "Tailwind"],
-    live: "#",
-    github: "#",
+    live: "https://swiggy-clone-gauravgunjal14.netlify.app/",
+    github: "https://github.com/gauravGunjal14/Swiggy-Clone",
+    featured: true,
   },
 ];
