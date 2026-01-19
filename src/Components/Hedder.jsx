@@ -81,7 +81,15 @@ export default function Headder() {
 
             {/* Menu section */}
             <div className="flex items-center gap-6 font-medium">
-                <a className="button-secondary p-3 hidden md:flex items-center justify-center rounded-xl">My Resume</a>
+                <a
+                    href="/Gaurav_Gunjal_Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="button-secondary p-3 hidden md:flex items-center justify-center rounded-xl"
+                >
+                    My Resume
+                </a>
+
 
                 {/* Menu button */}
                 <button
