@@ -6,15 +6,15 @@ export default function ProjectsPreview() {
   const featuredProjects = projects.filter(p => p.featured);
 
   return (
-    <section className="py-24 px-6 bg-[#FBFBF9]">
+    <section className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
 
         <h2 className="text-3xl md:text-4xl font-semibold text-center text-black">
-          Featured Projects
+          Projects
         </h2>
 
-        <p className="mt-4 text-center text-gray-600 max-w-2xl mx-auto">
-          A selection of projects that highlight my frontend skills and problem-solving approach.
+        <p className="mt-4 text-center text-gray-500 max-w-2xl mx-auto">
+          A selection of projects where i focused on clean UI, performance, and real-world usability.
         </p>
 
         <div className="grid md:grid-cols-2 gap-8 mt-12">

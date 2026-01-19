@@ -8,7 +8,6 @@ export default function Headder() {
     const buttonRef = useRef(null);
 
     useEffect(() => {
-        // Animate menu items when menu opens
         if (menuOpen && menuRef.current) {
             const tl = gsap.timeline();
             tl.fromTo(menuRef.current,
@@ -61,7 +60,7 @@ export default function Headder() {
 
             {/* profile section */}
             <Link to="/" className="flex items-center gap-4 ">
-                <img className="h-10 border-2 border-gray-500 rounded-md shadow-lg " src="/gaurav.png" alt="Gaurav Gunjal" />
+                <img className="h-10 border-2 border-white rounded-md shadow-lg " src="/gaurav.png" alt="Gaurav Gunjal" />
                 <div className="flex flex-col">
                     <h1 className="text-primary text-md font-medium">Gaurav Gunjal</h1>
                     {/* online indicator */}
@@ -109,7 +108,9 @@ export default function Headder() {
 
             {/* Dropdown menu */}
             {menuOpen && (
-                <nav ref={menuRef} className="absolute glass-bg top-16 right-4 md:right-10 w-50 md:w-65 rounded-lg shadow-lg flex flex-col p-2">
+                <nav
+                    ref={menuRef}
+                    className="absolute glass-bg glass-bg--menu top-[72px] right-4 md:right-10 w-50 md:w-65 rounded-xl shadow-lg flex flex-col p-2">
                     <Link to={"/"} className="menu-items hover:bg-[#e0e0e08c] rounded-lg p-2 flex items-center gap-4">
                         <div className="button-bg-accent rounded-lg p-1">
                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0,0,256,256">
@@ -120,7 +121,7 @@ export default function Headder() {
                     </Link>
                     <Link to={"/projects"} className="menu-items hover:bg-[#e0e0e08c] rounded-lg p-2 flex items-center gap-4">
                         <div className="button-bg-accent rounded-lg p-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-code-slash" viewBox="0 0 16 16">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#4B5563" className="bi bi-code-slash" viewBox="0 0 16 16">
                                 <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0" />
                             </svg>
                         </div>
@@ -128,7 +129,7 @@ export default function Headder() {
                     </Link>
                     <Link to={"/about"} className="menu-items hover:bg-[#e0e0e08c] rounded-lg p-2 flex items-center gap-4">
                         <div className="button-bg-accent rounded-lg p-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-person" viewBox="0 0 16 16">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#4B5563" className="bi bi-person" viewBox="0 0 16 16">
                                 <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
                             </svg>
                         </div>

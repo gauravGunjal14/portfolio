@@ -2,6 +2,8 @@ export const projects = [
   {
     id: 1,
     title: "PassMint – Password Generator",
+    imageName: "passmint.png",
+    imageUrl: "/projects/passmint.png",
     description:
       "A modern password generator built with React that creates secure passwords with customizable rules.",
     tech: ["React", "JavaScript", "CSS"],
@@ -12,6 +14,8 @@ export const projects = [
   {
     id: 2,
     title: "Swiggy Clone",
+    imageName: "swiggy.png",
+    imageUrl: "/projects/swiggy.png",
     description:
       "A frontend clone of Swiggy built using React with real API data and routing.",
     tech: ["React", "API", "Tailwind"],
