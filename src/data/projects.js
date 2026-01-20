@@ -9,8 +9,8 @@ export const projects = [
     details:
       "Orion is a web-based Data Structures and Algorithms visualizer built to make complex DSA concepts easier to understand through interactive animations. The main objective behind this project is to help students and beginners visualize how data structures and algorithms work internally, rather than just memorizing logic. Orion demonstrates operations on arrays, linked lists, trees, graphs, and common algorithms like sorting and traversal. This project reflects a strong focus on problem-solving, logical thinking, and building educational tools with clean UI and modular code.",
     tech: ["HTML", "CSS", "JavaScript"],
-    live: "https://your-orion-live-link.netlify.app", // add when deployed
-    github: "https://github.com/gaurav-gunjal14/Projects/tree/main/DSA-Visulizer",
+    live: "https://orion14.netlify.app/", // add when deployed
+    github: "https://github.com/gauravGunjal14/Orion",
     featured: true,
   },
   {

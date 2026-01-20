@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { projects } from "../data/projects";
-import ProjectCard from "./ProjectCard";
+import ProjectCard from "./ProjectPreviewCard.jsx";
+import BlueBackground from "./BlueBackground.jsx";
 
 export default function ProjectsPreview() {
   const featuredProjects = projects.filter(p => p.featured);
@@ -8,15 +9,7 @@ export default function ProjectsPreview() {
   return (
 
     <div className="min-h-screen w-full bg-[#fefcff] relative">
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `
-        radial-gradient(circle at 10% 50%, rgba(173, 216, 230, 0.35), transparent 30%),
-        radial-gradient(circle at 100% 90%, rgba(173, 216, 230, 0.35), transparent 20%)`,
-        }}
-      />
-      {/* Your Content/Components */}
+      <BlueBackground />
       <section id="projects" className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
 
@@ -34,7 +27,7 @@ export default function ProjectsPreview() {
             ))}
           </div>
 
-          <div className="mt-14 text-center">
+          <div className="mt-10 text-center">
             <Link
               to="/projects"
               className="button-secondary inline-flex px-6 py-3 rounded-xl">
