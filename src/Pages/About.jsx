@@ -1,6 +1,8 @@
 import Headder from "../Components/Hedder";
+import usePageTitle from "../hooks/usePageTitle.js";
 
 export default function About() {
+    usePageTitle("About | Gaurav Gunjal");
     return (
         <div>
             <Headder />

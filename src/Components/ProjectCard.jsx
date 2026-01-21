@@ -1,9 +1,7 @@
-export default function ProjectCard({ project, index }) {
-  const isEven = index % 2 === 1;
+export default function ProjectCard({ project }) {
   return (
     <div
       className={`bg-white flex flex-col md:flex-row gap-10 rounded-2xl p-8 shadow-sm transition-shadow hover:shadow-md
-        ${isEven ? "md:flex-row-reverse" : ""}
       `}>
       <div className="relative w-full md:w-[480px] aspect-16/10 overflow-hidden rounded-xl">
         <img

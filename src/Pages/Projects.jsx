@@ -2,8 +2,10 @@ import { projects } from "../data/projects";
 import Headder from "../Components/Hedder.jsx";
 import BlueBackground from "../Components/BlueBackground.jsx"
 import ProjectCard from "../Components/ProjectCard.jsx";
+import usePageTitle from "../hooks/usePageTitle.js";
 
 export default function Projects() {
+  usePageTitle("Projects | Gaurav Gunjal");
   return (
     <div>
       <Headder />
@@ -14,7 +16,6 @@ export default function Projects() {
             <ProjectCard
               key={project.id}
               project={project}
-              index={index}
             />
           ))}
         </div>
