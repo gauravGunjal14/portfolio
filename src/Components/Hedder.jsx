@@ -82,7 +82,7 @@ export default function Headder() {
             {/* Menu section */}
             <div className="flex items-center gap-6 font-medium">
                 <a
-                    href="/Gaurav_Gunjal_Resume.pdf"
+                    href="/Gaurav_Gunjal_Frontend_Developer_Resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="button-secondary p-3 hidden md:flex items-center justify-center rounded-xl"
