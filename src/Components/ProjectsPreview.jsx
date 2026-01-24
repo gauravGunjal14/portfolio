@@ -1,16 +1,49 @@
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import { projects } from "../data/projects";
-import ProjectCard from "./ProjectPreviewCard.jsx";
+import ProjectPreviewCard from "./ProjectPreviewCard.jsx";
 import BlueBackground from "./BlueBackground.jsx";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function ProjectsPreview() {
   const featuredProjects = projects.filter(p => p.featured);
 
-  return (
+  const sectionRef = useRef(null);
+  const cardsRef = useRef([]);
 
+ useEffect(() => {
+  if (!sectionRef.current || cardsRef.current.length === 0) return;
+
+  gsap.fromTo(
+    cardsRef.current,
+    {
+      opacity: 0,
+      y: 32,
+      scale: 0.97,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 55%",
+        end: "top 20%",
+        scrub: 0.6,
+      },
+    }
+  );
+}, []);
+
+  return (
     <div className="min-h-screen w-full bg-[#fefcff] relative">
       <BlueBackground />
-      <section id="projects" className="py-24 px-6">
+      <section id="projects" ref={sectionRef} className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
 
           <h2 className="text-3xl md:text-4xl font-semibold text-center text-black">
@@ -22,8 +55,14 @@ export default function ProjectsPreview() {
           </p>
 
           <div className="grid md:grid-cols-2 gap-8 mt-12">
-            {featuredProjects.map(project => (
-              <ProjectCard key={project.id} project={project} />
+            {featuredProjects.map((project, index) => (
+              <div
+                key={project.id}
+                ref={(el) => (cardsRef.current[index] = el)}
+                style={{ willChange: "transform, opacity" }}
+              >
+                <ProjectPreviewCard project={project} />
+              </div>
             ))}
           </div>
 

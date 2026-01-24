@@ -1,8 +1,43 @@
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 export default function ProjectCard({ project }) {
+  const cardRef = useRef(null);
+
+  useEffect(() => {
+    const el = cardRef.current;
+
+    gsap.fromTo(
+      el,
+      {
+        opacity: 0,
+        y: 40,
+        scale: 0.96,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        ease: "power3.out",
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: el,
+          start: "top 75%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+  }, []);
+
   return (
     <div
-      className={`bg-white flex flex-col md:flex-row gap-10 rounded-2xl p-8 shadow-sm transition-shadow hover:shadow-md
-      `}>
+      ref={cardRef}
+      style={{ willChange: "transform, opacity" }}
+      className="bg-white flex flex-col md:flex-row gap-10 rounded-2xl p-8 shadow-sm transition-shadow hover:shadow-md"
+    >
       <div className="relative w-full md:w-[480px] aspect-16/10 overflow-hidden rounded-xl">
         <img
           src={project.imageUrl}
@@ -11,6 +46,7 @@ export default function ProjectCard({ project }) {
           style={{ objectPosition: "center 20%" }}
         />
       </div>
+
       <div className="flex flex-col justify-center">
         <h3 className="text-2xl font-semibold text-black">
           {project.title}

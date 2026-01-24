@@ -1,5 +1,9 @@
 import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function SmoothScroll({ children }) {
   useEffect(() => {
@@ -10,12 +14,18 @@ export default function SmoothScroll({ children }) {
       smoothTouch: false,
     });
 
+    // 🔑 Lenis + GSAP sync
+    lenis.on("scroll", ScrollTrigger.update);
+
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
 
     requestAnimationFrame(raf);
+
+    // 🧠 Tell ScrollTrigger to use Lenis
+    ScrollTrigger.refresh();
 
     return () => {
       lenis.destroy();

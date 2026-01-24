@@ -24,24 +24,24 @@ export default function Hero() {
             tl.fromTo(
                 avatarRef.current,
                 { y: 20, scale: 0.95, autoAlpha: 0 },
-                { y: 0, scale: 1, autoAlpha: 1, duration: 0.6, clearProps: "opacity" }
+                { y: 0, scale: 1, autoAlpha: 1, duration: 0.4, clearProps: "opacity" }
             )
                 .fromTo(
                     headingRef.current.children,
                     { y: 30, autoAlpha: 0 },
-                    { y: 0, autoAlpha: 1, duration: 0.6, stagger: 0.12, clearProps: "opacity" },
+                    { y: 0, autoAlpha: 1, duration: 0.4, stagger: 0.12, clearProps: "opacity" },
                     "-=0.2"
                 )
                 .fromTo(
                     subTextRef.current,
                     { y: 20, autoAlpha: 0 },
-                    { y: 0, autoAlpha: 1, duration: 0.4, clearProps: "opacity" },
+                    { y: 0, autoAlpha: 1, duration: 0.2, clearProps: "opacity" },
                     "-=0.2"
                 )
                 .fromTo(
                     ctaRef.current,
                     { y: 20, autoAlpha: 0 },
-                    { y: 0, autoAlpha: 1, duration: 0.4, clearProps: "opacity" },
+                    { y: 0, autoAlpha: 1, duration: 0.2, clearProps: "opacity" },
                     "-=0.2"
                 );
 
