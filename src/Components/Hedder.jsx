@@ -124,7 +124,7 @@ export default function Headder() {
                 {menuOpen && (
                     <nav
                         ref={menuRef}
-                        className="absolute glass-bg glass-bg--menu top-[72px] right-4 md:right-10 w-50 md:w-65 rounded-xl shadow-lg flex flex-col p-2">
+                        className="absolute glass-bg glass-bg--menu top-[72px] right-4 md:right-0 w-50 md:w-65 rounded-xl shadow-lg flex flex-col p-2">
                         <Link to={"/"} className="menu-items hover:bg-[#e0e0e08c] rounded-lg p-2 flex items-center gap-4">
                             <div className="button-bg-accent rounded-lg p-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0,0,256,256">

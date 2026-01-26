@@ -5,6 +5,7 @@ import GradientBackground from "./GradientBackground.jsx"
 export default function Hero() {
 
     const avatarRef = useRef(null);
+    const emojiRef = useRef(null);
     const headingRef = useRef(null);
     const subTextRef = useRef(null);
     const ctaRef = useRef(null);
@@ -43,7 +44,18 @@ export default function Hero() {
                     { y: 20, autoAlpha: 0 },
                     { y: 0, autoAlpha: 1, duration: 0.2, clearProps: "opacity" },
                     "-=0.2"
-                );
+                )
+                .from(
+                    emojiRef.current,
+                    {
+                        rotation: -20,
+                        yoyo: true,
+                        repeat: 3,
+                        duration: 0.5,
+                        ease: "sine.inOut",
+                    },
+                    "-=0.5"
+                )
 
         });
 
@@ -64,8 +76,8 @@ export default function Hero() {
                     ref={avatarRef}
                     className="flex flex-col items-center relative mb-10">
                     <img className="h-25 w-25 rounded-full" src="./gaurav.png" alt="Gaurav Gunjal" />
-                    <div className="mb-6 inline-flex w-40 items-center gap-2 rounded-xl bg-black px-4 py-2 text-sm font-semibold text-white absolute -bottom-10 shadow-lg">
-                        <span>👋</span>
+                    <div className="mb-6 inline-flex w-40 items-center gap-1 rounded-xl bg-black px-4 py-2 text-sm font-semibold text-white absolute -bottom-10 shadow-lg">
+                        <span ref={emojiRef}>👋</span>
                         <span>Hi, I’m Gaurav</span>
                     </div>
                 </div>
@@ -73,7 +85,7 @@ export default function Hero() {
                 <div
                     ref={headingRef}
                     className="max-w-4xl hero-hidden">
-                    <p className="text-2xl md:text-4xl font-medium bg-linear-to-r from-black to-gray-50 bg-clip-text text-transparent mb-2">
+                    <p className="text-2xl md:text-4xl font-medium bg-linear-to-r from-black to-gray-400 bg-clip-text text-transparent mb-2">
                         I’m a Frontend Developer,
                     </p>
 
@@ -96,7 +108,7 @@ export default function Hero() {
                         href="https://mail.google.com/mail/?view=cm&fs=1&to=gauravgunjal45@gmail.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="button-main flex items-center justify-center gap-2 w-40 px-6 py-3 rounded-2xl">
+                        className="button-main flex items-center justify-center gap-2 w-40 px-6 py-3 rounded-xl">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                             <path d="M4 6h16v12H4z" stroke="currentColor" strokeWidth="1.5" />
                             <path d="M4 6l8 6 8-6" stroke="currentColor" strokeWidth="1.5" />
@@ -106,7 +118,7 @@ export default function Hero() {
 
                     <a
                         href="#projects"
-                        className="button-secondary flex items-center justify-center w-40 px-6 py-3 rounded-2xl"
+                        className="button-secondary flex items-center justify-center w-40 px-6 py-3 rounded-xl"
                     >
                         View Projects
                     </a>

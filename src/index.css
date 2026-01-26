@@ -108,13 +108,14 @@
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.823),
-    rgba(245, 245, 243, 0.7)
+    rgba(245, 245, 243, 0.7),
   );
-  background: 
+  /* background: 
         radial-gradient(ellipse 80% 60% at 70% 20%, rgba(175, 109, 255, 0.85), transparent 68%),
         radial-gradient(ellipse 70% 60% at 20% 80%, rgba(255, 100, 180, 0.463), transparent 68%),
         radial-gradient(ellipse 60% 50% at 60% 65%, rgba(255, 229, 145, 0.98), transparent 88%),
         radial-gradient(ellipse 65% 40% at 50% 60%, rgba(120, 190, 255, 0.3), transparent 68%),
         linear-gradient(180deg, #f7eaff 0%, #fde2ea 100%)
-      ,
+        radial-gradient(circle at 10% 50%, rgba(175, 109, 255, 0.85), transparent 30%),
+        radial-gradient(circle at 100% 90%, rgba(255, 229, 145, 0.98), transparent 20%), */
 }

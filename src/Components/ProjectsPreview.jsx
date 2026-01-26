@@ -13,17 +13,17 @@ export default function ProjectsPreview() {
   const featuredProjects = projects.filter(p => p.featured);
 
   const sectionRef = useRef(null);
+  const hedderRef = useRef(null);
+  const paraRef = useRef(null);
   const cardsRef = useRef([]);
 
  useEffect(() => {
-  if (!sectionRef.current || cardsRef.current.length === 0) return;
 
-  gsap.fromTo(
-    cardsRef.current,
+  gsap.fromTo(hedderRef.current,
     {
       opacity: 0,
-      y: 32,
-      scale: 0.97,
+      y: 20,
+      scale: 0.96,
     },
     {
       opacity: 1,
@@ -32,9 +32,52 @@ export default function ProjectsPreview() {
       ease: "power3.out",
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: "top 55%",
-        end: "top 20%",
+        start: "top 80%",
+        end: "top 60%",
         scrub: 0.6,
+      }
+    }
+  )
+
+  gsap.fromTo(paraRef.current,
+    {
+      opacity: 0,
+      y: 20,
+      scale: 0.96,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 75%",
+        end: "top 55%",
+        scrub: 0.6,
+      }
+    }
+  );
+  if (!sectionRef.current || cardsRef.current.length === 0) return;
+
+  gsap.fromTo(
+    cardsRef.current,
+    {
+      opacity: 0,
+      y: 32,
+      scale: 0.9,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 60%",
+        end: "top 30%",
+        scrub: 0.6,
+        markers: true,
       },
     }
   );
@@ -46,11 +89,15 @@ export default function ProjectsPreview() {
       <section id="projects" ref={sectionRef} className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
 
-          <h2 className="text-3xl md:text-4xl font-semibold text-center text-black">
+          <h2
+          ref={hedderRef}
+           className="text-3xl md:text-4xl font-semibold text-center text-black">
             Projects
           </h2>
 
-          <p className="mt-4 text-center text-gray-500 max-w-2xl mx-auto">
+          <p
+          ref={paraRef}
+           className="mt-4 text-center text-gray-500 max-w-2xl mx-auto">
             A selection of projects where i focused on clean UI, performance, and real-world usability.
           </p>
 
