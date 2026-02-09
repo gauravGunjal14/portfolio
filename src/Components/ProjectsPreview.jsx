@@ -17,71 +17,71 @@ export default function ProjectsPreview() {
   const paraRef = useRef(null);
   const cardsRef = useRef([]);
 
- useEffect(() => {
+  useEffect(() => {
 
-  gsap.fromTo(hedderRef.current,
-    {
-      opacity: 0,
-      y: 20,
-      scale: 0.96,
-    },
-    {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 80%",
-        end: "top 60%",
-        scrub: 0.6,
-      }
-    }
-  )
-
-  gsap.fromTo(paraRef.current,
-    {
-      opacity: 0,
-      y: 20,
-      scale: 0.96,
-    },
-    {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 75%",
-        end: "top 55%",
-        scrub: 0.6,
-      }
-    }
-  );
-  if (!sectionRef.current || cardsRef.current.length === 0) return;
-
-  gsap.fromTo(
-    cardsRef.current,
-    {
-      opacity: 0,
-      y: 32,
-      scale: 0.9,
-    },
-    {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 60%",
-        end: "top 30%",
-        scrub: 0.6,
-        markers: true,
+    gsap.fromTo(hedderRef.current,
+      {
+        opacity: 0,
+        y: 20,
+        scale: 0.96,
       },
-    }
-  );
-}, []);
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          end: "top 60%",
+          scrub: 0.6,
+        }
+      }
+    )
+
+    gsap.fromTo(paraRef.current,
+      {
+        opacity: 0,
+        y: 20,
+        scale: 0.96,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 75%",
+          end: "top 55%",
+          scrub: 0.6,
+        }
+      }
+    );
+    if (!sectionRef.current || cardsRef.current.length === 0) return;
+
+    gsap.fromTo(
+      cardsRef.current,
+      {
+        opacity: 0,
+        y: 32,
+        scale: 0.9,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 60%",
+          end: "top 30%",
+          scrub: 0.6,
+          markers: true,
+        },
+      }
+    );
+  }, []);
 
   return (
     <div className="min-h-screen w-full bg-[#fefcff] relative">
@@ -90,14 +90,14 @@ export default function ProjectsPreview() {
         <div className="max-w-6xl mx-auto">
 
           <h2
-          ref={hedderRef}
-           className="text-3xl md:text-4xl font-semibold text-center text-black">
+            ref={hedderRef}
+            className="text-3xl md:text-4xl font-semibold text-center text-black">
             Projects
           </h2>
 
           <p
-          ref={paraRef}
-           className="mt-4 text-center text-gray-500 max-w-2xl mx-auto">
+            ref={paraRef}
+            className="mt-4 text-center text-gray-500 max-w-2xl mx-auto">
             A selection of projects where i focused on clean UI, performance, and real-world usability.
           </p>
 

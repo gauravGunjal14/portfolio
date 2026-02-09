@@ -64,7 +64,7 @@ export default function Hero() {
 
 
     return (
-        <section className="relative min-h-screen overflow-hidden bg-[#F4F3EE]">
+        <section className="relative z-0 min-h-screen overflow-hidden bg-[#F4F3EE]">
 
             {/* Background */}
             <GradientBackground />
