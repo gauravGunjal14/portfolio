@@ -77,7 +77,6 @@ export default function ProjectsPreview() {
           start: "top 60%",
           end: "top 30%",
           scrub: 0.6,
-          markers: true,
         },
       }
     );
