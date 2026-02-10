@@ -1,28 +1,59 @@
 export const projects = [
   {
     id: 1,
-    title: "Orion – DSA Visualizer",
-    imageName: "orion.png",
+    title: "Orion — DSA Visualizer",
+    subtitle: "Making Data Structures & Algorithms visible, not abstract",
     imageUrl: "/projects/orion.png",
+
     description:
-      "An interactive Data Structures and Algorithms visualizer with clean animations and modern UI.",
+      "Orion is an interactive Data Structures and Algorithms visualizer built to help students and beginners truly understand how DSA works internally, instead of memorizing logic blindly.",
+
     details:
-      "Orion is a web-based Data Structures and Algorithms visualizer built to make complex DSA concepts easier to understand through interactive animations. The main objective behind this project is to help students and beginners visualize how data structures and algorithms work internally, rather than just memorizing logic. Orion demonstrates operations on arrays, linked lists, trees, graphs, and common algorithms like sorting and traversal. This project reflects a strong focus on problem-solving, logical thinking, and building educational tools with clean UI and modular code.",
+      "The core problem Orion solves is that most learners struggle with DSA because concepts remain abstract when taught only through code. Orion transforms these abstract ideas into visual, step-by-step animations. Users can see how arrays change during insertion or deletion, how sorting algorithms swap elements, and how each step affects the data structure in real time. The project focuses heavily on learning-first UX, clean animations, and intuitive controls, making complex topics easier to grasp. Orion also reflects my interest in combining problem-solving, frontend logic, and educational product design.",
+
+    role:
+      "Frontend Development • UI/UX Design • Logic Implementation",
+
     tech: ["HTML", "CSS", "JavaScript"],
-    live: "https://orion14.netlify.app/", // add when deployed
+
+    highlights: [
+      "Step-by-step visualization of algorithms",
+      "Clean, minimal UI focused on learning",
+      "Sorting algorithms like Bubble, Merge & Quick Sort",
+      "Beginner-friendly explanations through visuals",
+    ],
+
+    year: "2024",
+    live: "https://orion14.netlify.app/",
     github: "https://github.com/gauravGunjal14/Orion",
     featured: true,
   },
+
   {
     id: 2,
-    title: "PassMint – Password Generator",
-    imageName: "passmint.png",
+    title: "PassMint — Password Generator",
+    subtitle: "A practical security tool built with React",
     imageUrl: "/projects/passmint.png",
+
     description:
-      "A modern password generator built with React that creates secure passwords with customizable rules.",
+      "PassMint is a modern password generator that helps users create strong, secure, and customizable passwords instantly using a clean and responsive interface.",
+
     details:
-      "PassMint is a React-based password generator designed to help users create strong and secure passwords instantly. The objective behind this project was to practice core React concepts like state management, component structure, and event handling, while building a practical real-world utility. Users can customize password length, character types, and difficulty levels, making it useful for everyday security needs.",
+      "PassMint was created to solve a real-world problem — people often reuse weak passwords because generating strong ones feels complicated. This project allows users to generate secure passwords by customizing length, character types, and difficulty level. From a development perspective, PassMint was built to practice core React concepts such as state management, component structure, event handling, and conditional rendering. The UI is designed to be simple and intuitive so users can generate and copy passwords in just one click.",
+
+    role:
+      "React Development • UI Design • State Management",
+
     tech: ["React", "JavaScript", "CSS"],
+
+    highlights: [
+      "Custom password length (up to 50 characters)",
+      "Difficulty modes: Easy, Moderate, Hard",
+      "One-click copy to clipboard",
+      "Fully responsive across devices",
+    ],
+
+    year: "2024",
     live: "https://passmint14.netlify.app",
     github: "https://github.com/gauravGunjal14/PassMint",
     featured: true,
@@ -31,13 +62,28 @@ export const projects = [
   {
     id: 3,
     title: "Swiggy Clone",
-    imageName: "swiggy.png",
+    subtitle: "Understanding real-world frontend architecture",
     imageUrl: "/projects/swiggy.png",
+
     description:
-      "A frontend clone of Swiggy built using React with real API data and routing.",
+      "A frontend clone of the Swiggy food delivery platform built with React, focusing on real-world application structure and API-driven UI.",
+
     details:
-      "The Swiggy Clone project focuses on replicating the core frontend experience of the Swiggy food delivery platform. The objective was to understand real-world application structure, API integration, routing, and component-based architecture in React. This project demonstrates handling live data, UI rendering based on API responses, and building scalable frontend layouts similar to production-grade applications.",
-    tech: ["React", "API", "Tailwind"],
+      "The Swiggy Clone project was built to understand how large-scale consumer applications are structured on the frontend. The project focuses on routing, API integration, component-based architecture, and dynamic UI rendering based on live data. It helped me gain hands-on experience with handling asynchronous data, managing state across components, and building layouts that resemble production-level applications.",
+
+    role:
+      "Frontend Engineering • API Integration",
+
+    tech: ["React", "API", "Tailwind CSS"],
+
+    highlights: [
+      "Live API data rendering",
+      "Routing with dynamic pages",
+      "Reusable component architecture",
+      "Production-style UI layout",
+    ],
+
+    year: "2023",
     live: "https://swiggy-clone-gauravgunjal14.netlify.app/",
     github: "https://github.com/gauravGunjal14/Swiggy-Clone",
     featured: false,

@@ -36,54 +36,68 @@ export default function ProjectCard({ project }) {
     <div
       ref={cardRef}
       style={{ willChange: "transform, opacity" }}
-      className="bg-white flex flex-col md:flex-row gap-10 rounded-2xl p-8 shadow-sm transition-shadow hover:shadow-md"
+      className="bg-white flex flex-col md:flex-row gap-12 rounded-3xl p-10 shadow-sm hover:shadow-md transition-shadow"
     >
-      <div className="relative w-full md:w-[480px] aspect-16/10 overflow-hidden rounded-xl">
+      {/* Image */}
+      <div className="relative w-full md:w-[480px] aspect-[16/10] overflow-hidden rounded-2xl bg-black/5">
         <img
           src={project.imageUrl}
-          alt={project.imageName}
-          className="w-full h-full object-cover scale-[1.05]"
-          style={{ objectPosition: "center 20%" }}
+          alt={project.title}
+          className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.04]"
         />
       </div>
 
-      <div className="flex flex-col justify-center">
-        <h3 className="text-2xl font-semibold text-black">
+      {/* Content */}
+      <div className="flex flex-col justify-center max-w-xl">
+        <span className="text-sm text-gray-400 mb-2">
+          {project.role} • {project.year}
+        </span>
+
+        <h3 className="text-2xl md:text-3xl font-semibold text-black">
           {project.title}
         </h3>
 
-        <p className="mt-3 text-gray-600 text-sm text-justify leading-relaxed max-w-xl">
+        <p className="mt-4 text-gray-600 leading-relaxed text-justify">
           {project.details}
         </p>
 
-        <div className="flex flex-col gap-4 mt-3">
-          <div className="flex flex-wrap gap-2">
-            {project.tech.map((tech, index) => (
-              <span
-                key={index}
-                className="text-sm px-3 py-1 rounded-md bg-gray-100 text-gray-600 border border-gray-300"
-              >
-                {tech}
-              </span>
+        {/* Highlights */}
+        {project.highlights && (
+          <ul className="mt-4 list-disc list-inside text-gray-500 text-sm space-y-1">
+            {project.highlights.map((point, index) => (
+              <li key={index}>{point}</li>
             ))}
-          </div>
+          </ul>
+        )}
 
-          <div className="flex gap-3 mt-2">
-            <a
-              href={project.live}
-              target="_blank"
-              className="button-main flex justify-center items-center w-20 px-4 py-2 rounded-lg text-sm"
+        {/* Tech */}
+        <div className="flex flex-wrap gap-2 mt-6">
+          {project.tech.map((tech, index) => (
+            <span
+              key={index}
+              className="text-sm px-3 py-1 rounded-full bg-black/5 text-gray-600"
             >
-              Live
-            </a>
-            <a
-              href={project.github}
-              target="_blank"
-              className="button-secondary flex justify-center items-center w-20 px-4 py-2 rounded-lg text-sm"
-            >
-              Code
-            </a>
-          </div>
+              {tech}
+            </span>
+          ))}
+        </div>
+
+        {/* Links */}
+        <div className="flex gap-4 mt-8">
+          <a
+            href={project.live}
+            target="_blank"
+            className="button-main px-5 py-2 rounded-lg text-sm"
+          >
+            Live Demo
+          </a>
+          <a
+            href={project.github}
+            target="_blank"
+            className="button-secondary px-5 py-2 rounded-lg text-sm"
+          >
+            Source Code
+          </a>
         </div>
       </div>
     </div>

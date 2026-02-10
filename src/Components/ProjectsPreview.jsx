@@ -4,7 +4,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { projects } from "../data/projects";
-import ProjectPreviewCard from "./ProjectPreviewCard.jsx";
 import BlueBackground from "./BlueBackground.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -13,116 +12,162 @@ export default function ProjectsPreview() {
   const featuredProjects = projects.filter(p => p.featured);
 
   const sectionRef = useRef(null);
-  const hedderRef = useRef(null);
+  const headerRef = useRef(null);
   const paraRef = useRef(null);
-  const cardsRef = useRef([]);
+  const rowsRef = useRef([]);
 
   useEffect(() => {
-
-    gsap.fromTo(hedderRef.current,
-      {
-        opacity: 0,
-        y: 20,
-        scale: 0.96,
-      },
+    gsap.fromTo(
+      headerRef.current,
+      { opacity: 0, y: 24 },
       {
         opacity: 1,
         y: 0,
-        scale: 1,
         ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 80%",
-          end: "top 60%",
-          scrub: 0.6,
-        }
+        },
       }
-    )
+    );
 
-    gsap.fromTo(paraRef.current,
-      {
-        opacity: 0,
-        y: 20,
-        scale: 0.96,
-      },
+    gsap.fromTo(
+      paraRef.current,
+      { opacity: 0, y: 24 },
       {
         opacity: 1,
         y: 0,
-        scale: 1,
+        delay: 0.1,
         ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 75%",
-          end: "top 55%",
-          scrub: 0.6,
-        }
+        },
       }
     );
-    if (!sectionRef.current || cardsRef.current.length === 0) return;
 
     gsap.fromTo(
-      cardsRef.current,
-      {
-        opacity: 0,
-        y: 32,
-        scale: 0.9,
-      },
+      rowsRef.current,
+      { opacity: 0, y: 40 },
       {
         opacity: 1,
         y: 0,
-        scale: 1,
+        stagger: 0.15,
         ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 60%",
-          end: "top 30%",
-          scrub: 0.6,
+          start: "top 65%",
         },
       }
     );
   }, []);
 
   return (
-    <div className="min-h-screen w-full bg-[#fefcff] relative">
+    <div className="relative w-full bg-[#fefcff]">
       <BlueBackground />
-      <section id="projects" ref={sectionRef} className="py-24 px-6">
+
+      <section
+        id="projects"
+        ref={sectionRef}
+        className="py-28 px-6"
+      >
         <div className="max-w-6xl mx-auto">
 
-          <h2
-            ref={hedderRef}
-            className="text-3xl md:text-4xl font-semibold text-center text-black">
-            Projects
-          </h2>
+          {/* Header */}
+          <div className="max-w-2xl mb-24">
+            <h2
+              ref={headerRef}
+              className="text-4xl md:text-5xl font-semibold text-black"
+            >
+              Selected Work
+            </h2>
 
-          <p
-            ref={paraRef}
-            className="mt-4 text-center text-gray-500 max-w-2xl mx-auto">
-            A selection of projects where i focused on clean UI, performance, and real-world usability.
-          </p>
-
-          <div className="grid md:grid-cols-2 gap-8 mt-12">
-            {featuredProjects.map((project, index) => (
-              <div
-                key={project.id}
-                ref={(el) => (cardsRef.current[index] = el)}
-                style={{ willChange: "transform, opacity" }}
-              >
-                <ProjectPreviewCard project={project} />
-              </div>
-            ))}
+            <p
+              ref={paraRef}
+              className="mt-4 text-lg text-gray-500"
+            >
+              A curated selection of projects focused on usability,
+              performance, and real-world problem solving.
+            </p>
           </div>
 
-          <div className="mt-10 text-center">
+          {/* Projects */}
+          <div className="flex flex-col gap-32">
+            {featuredProjects.map((project, index) => {
+              const reverse = index % 2 !== 0;
+
+              return (
+                <div
+                  key={project.id}
+                  ref={el => (rowsRef.current[index] = el)}
+                  className={`flex flex-col ${
+                    reverse ? "md:flex-row-reverse" : "md:flex-row"
+                  } gap-16 items-center`}
+                >
+                  {/* Image */}
+                  <div className="w-full md:w-1/2">
+                    <div className="rounded-3xl overflow-hidden bg-black/5">
+                      <img
+                        src={project.imageUrl}
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.04]"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="w-full md:w-1/2">
+                    <div className="text-sm text-gray-400 mb-3">
+                      {project.role} • {project.year}
+                    </div>
+
+                    <h3 className="text-2xl md:text-3xl font-semibold text-black">
+                      {project.title}
+                    </h3>
+
+                    <p className="mt-4 text-gray-500 max-w-md">
+                      {project.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-3 mt-6">
+                      {project.tech.map(t => (
+                        <span
+                          key={t}
+                          className="px-4 py-1.5 rounded-full text-sm bg-black/5 text-gray-600"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+
+                    <Link
+                      to="/projects"
+                      className="inline-flex items-center gap-2 mt-8 font-medium text-black group"
+                    >
+                      View Case Study
+                      <span className="transition-transform group-hover:translate-x-1">
+                        →
+                      </span>
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Footer CTA */}
+          <div className="mt-32">
             <Link
               to="/projects"
-              className="button-secondary inline-flex px-6 py-3 rounded-xl">
-              View All Projects
+              className="inline-flex items-center gap-3 text-lg font-medium"
+            >
+              View all projects
+              <span>↗</span>
             </Link>
           </div>
 
         </div>
       </section>
-    </div >
-
+    </div>
   );
 }
