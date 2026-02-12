@@ -23,7 +23,7 @@ export const projects = [
       "Beginner-friendly explanations through visuals",
     ],
 
-    year: "2024",
+    year: "2025",
     live: "https://orion14.netlify.app/",
     github: "https://github.com/gauravGunjal14/Orion",
     featured: true,
@@ -53,7 +53,7 @@ export const projects = [
       "Fully responsive across devices",
     ],
 
-    year: "2024",
+    year: "2025",
     live: "https://passmint14.netlify.app",
     github: "https://github.com/gauravGunjal14/PassMint",
     featured: true,
@@ -83,7 +83,7 @@ export const projects = [
       "Production-style UI layout",
     ],
 
-    year: "2023",
+    year: "2025",
     live: "https://swiggy-clone-gauravgunjal14.netlify.app/",
     github: "https://github.com/gauravGunjal14/Swiggy-Clone",
     featured: false,

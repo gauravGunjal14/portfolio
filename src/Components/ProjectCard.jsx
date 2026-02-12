@@ -38,8 +38,8 @@ export default function ProjectCard({ project }) {
       style={{ willChange: "transform, opacity" }}
       className="bg-white flex flex-col md:flex-row gap-12 rounded-3xl p-10 shadow-sm hover:shadow-md transition-shadow"
     >
-      {/* Image */}
-      <div className="relative w-full md:w-[480px] aspect-[16/10] overflow-hidden rounded-2xl bg-black/5">
+
+      <div className="relative w-full md:w-[480px] aspect-16/10 overflow-hidden rounded-2xl bg-black/5">
         <img
           src={project.imageUrl}
           alt={project.title}
@@ -47,7 +47,6 @@ export default function ProjectCard({ project }) {
         />
       </div>
 
-      {/* Content */}
       <div className="flex flex-col justify-center max-w-xl">
         <span className="text-sm text-gray-400 mb-2">
           {project.role} • {project.year}
@@ -61,7 +60,6 @@ export default function ProjectCard({ project }) {
           {project.details}
         </p>
 
-        {/* Highlights */}
         {project.highlights && (
           <ul className="mt-4 list-disc list-inside text-gray-500 text-sm space-y-1">
             {project.highlights.map((point, index) => (
@@ -70,19 +68,17 @@ export default function ProjectCard({ project }) {
           </ul>
         )}
 
-        {/* Tech */}
         <div className="flex flex-wrap gap-2 mt-6">
           {project.tech.map((tech, index) => (
             <span
               key={index}
-              className="text-sm px-3 py-1 rounded-full bg-black/5 text-gray-600"
+              className="text-sm px-3 py-1.5 rounded-lg bg-black/5 text-gray-600"
             >
               {tech}
             </span>
           ))}
         </div>
 
-        {/* Links */}
         <div className="flex gap-4 mt-8">
           <a
             href={project.live}

@@ -55,7 +55,7 @@ export default function Projects() {
         ref={sectionRef}
         className="max-w-6xl mx-auto px-6 py-28"
       >
-        {/* Header */}
+
         <div className="max-w-2xl mb-20">
           <h1
             ref={headerRef}
@@ -74,7 +74,6 @@ export default function Projects() {
           </p>
         </div>
 
-        {/* Project List */}
         <div className="flex flex-col gap-20">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />

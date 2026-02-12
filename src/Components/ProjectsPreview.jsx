@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 import { projects } from "../data/projects";
 import BlueBackground from "./BlueBackground.jsx";
 
@@ -73,13 +72,12 @@ export default function ProjectsPreview() {
       >
         <div className="max-w-6xl mx-auto">
 
-          {/* Header */}
           <div className="max-w-2xl mb-24">
             <h2
               ref={headerRef}
               className="text-4xl md:text-5xl font-semibold text-black"
             >
-              Selected Work
+              Projects
             </h2>
 
             <p
@@ -91,7 +89,6 @@ export default function ProjectsPreview() {
             </p>
           </div>
 
-          {/* Projects */}
           <div className="flex flex-col gap-32">
             {featuredProjects.map((project, index) => {
               const reverse = index % 2 !== 0;
@@ -104,7 +101,7 @@ export default function ProjectsPreview() {
                     reverse ? "md:flex-row-reverse" : "md:flex-row"
                   } gap-16 items-center`}
                 >
-                  {/* Image */}
+
                   <div className="w-full md:w-1/2">
                     <div className="rounded-3xl overflow-hidden bg-black/5">
                       <img
@@ -115,7 +112,6 @@ export default function ProjectsPreview() {
                     </div>
                   </div>
 
-                  {/* Content */}
                   <div className="w-full md:w-1/2">
                     <div className="text-sm text-gray-400 mb-3">
                       {project.role} • {project.year}
@@ -133,7 +129,7 @@ export default function ProjectsPreview() {
                       {project.tech.map(t => (
                         <span
                           key={t}
-                          className="px-4 py-1.5 rounded-full text-sm bg-black/5 text-gray-600"
+                          className="px-4 py-1.5 rounded-lg text-sm bg-black/5 text-gray-600"
                         >
                           {t}
                         </span>
@@ -142,7 +138,7 @@ export default function ProjectsPreview() {
 
                     <Link
                       to="/projects"
-                      className="inline-flex items-center gap-2 mt-8 font-medium text-black group"
+                      className="inline-flex items-center gap-2 mt-8 font-medium text-gray-600 bg-black/5 px-4 py-2 rounded-lg group"
                     >
                       View Case Study
                       <span className="transition-transform group-hover:translate-x-1">
@@ -155,14 +151,15 @@ export default function ProjectsPreview() {
             })}
           </div>
 
-          {/* Footer CTA */}
-          <div className="mt-32">
+          <div className="mt-32 w-full flex justify-center">
             <Link
               to="/projects"
-              className="inline-flex items-center gap-3 text-lg font-medium"
+              className="button-main inline-flex items-center gap-3 text-lg font-medium px-4 py-2 rounded-lg"
             >
               View all projects
-              <span>↗</span>
+              <span>
+                →
+              </span>
             </Link>
           </div>
 
